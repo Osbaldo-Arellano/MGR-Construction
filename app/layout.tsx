@@ -29,6 +29,8 @@ let SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 async function fetchServerBrandData(): Promise<{
   initialData: InitialBrandData;
   primaryColor: string;
+  secondaryColor?: string;
+  accentColor?: string;
   mode: "light" | "dark" | "system";
 } | null> {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
