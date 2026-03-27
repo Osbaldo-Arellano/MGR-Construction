@@ -21,6 +21,8 @@ export interface ClientDeployment {
   // Theme overrides. Any omitted key falls back to the preset default.
   theme: {
     primaryColor: string;
+    secondaryColor?: string;
+    accentColor?: string;
     radius: "rounded" | "sharp" | "pill";
     density: "compact" | "comfortable" | "spacious";
     mode: "light" | "dark" | "system";
