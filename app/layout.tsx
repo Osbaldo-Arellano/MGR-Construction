@@ -26,6 +26,41 @@ const mono = JetBrains_Mono({
 
 let SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 
+function buildJsonLd(brand: BrandRow | null, siteUrl: string) {
+  const name = brand?.name ?? "MGR Construction LLC";
+  const phone = brand?.phone ?? "971-600-6445";
+  const email = brand?.email ?? "mcr.construction75@gmail.com";
+  const address = brand?.address;
+  const socialLinks = (brand?.social_links ?? []).map((s) => s.url).filter(Boolean);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    name,
+    url: siteUrl,
+    telephone: phone,
+    email,
+    address: {
+      "@type": "PostalAddress",
+      ...(address?.street ? { streetAddress: address.street } : {}),
+      ...(address?.city ? { addressLocality: address.city } : {}),
+      addressRegion: address?.state ?? "OR",
+      ...(address?.zip ? { postalCode: address.zip } : {}),
+      addressCountry: "US",
+    },
+    areaServed: { "@type": "State", name: "Oregon" },
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        opens: "07:00",
+        closes: "19:00",
+      },
+    ],
+    ...(socialLinks.length > 0 ? { sameAs: socialLinks } : {}),
+  };
+}
+
 async function fetchServerBrandData(): Promise<{
   initialData: InitialBrandData;
   primaryColor: string;
@@ -106,6 +141,22 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${siteName}`,
     },
     description: siteDescription,
+    keywords: [
+      siteName,
+      "construction Oregon",
+      "siding installation Oregon",
+      "roofing services Oregon",
+      "painting contractor Oregon",
+      "windows installation Oregon",
+      "doors installation Oregon",
+      "general contractor Oregon",
+      "exterior renovation Oregon",
+      "Pacific Northwest construction",
+    ],
+    authors: [{ name: siteName }],
+    alternates: {
+      canonical: SITE_URL,
+    },
     openGraph: {
       type: "website",
       locale: "en_US",
@@ -160,6 +211,10 @@ export default async function RootLayout({
           accentColor    ? ` --brand-accent: ${accentColor};`       : "",
           ` }`,
         ].join("") }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd(serverData?.initialData?.brand ?? null, SITE_URL)) }}
+        />
       </head>
       <body className={`${sans.variable} ${mono.variable} antialiased`}>
         <ThemeProvider

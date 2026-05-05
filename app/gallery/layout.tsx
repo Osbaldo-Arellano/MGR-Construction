@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Project Gallery",
-  description: "Browse our portfolio of work.",
+  description: "Browse MGR Construction LLC's portfolio of siding, roofing, painting, windows, and doors projects across Oregon.",
   alternates: {
     canonical: "/gallery",
   },
   openGraph: {
-    title: "Project Gallery",
-    description: "Browse our portfolio of work.",
+    title: "Project Gallery | MGR Construction LLC",
+    description: "Browse siding, roofing, painting, windows, and doors projects by MGR Construction LLC — serving Oregon and 120+ miles beyond.",
     url: "/gallery",
     type: "website",
   },
