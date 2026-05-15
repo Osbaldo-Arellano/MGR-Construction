@@ -1,7 +1,7 @@
 // ============================================================
 // CLIENT CONFIG — MGR Construction LLC
 // Location: Oregon | Service Area: 120+ miles
-// Phone 1: 971-600-6445 | Phone 2: 971-316-9918
+// Phone 1: 971-316-9918 | Phone 2: 971-316-9918
 // Email: mcr.construction75@gmail.com
 // Website: mgrconstructionllcor.com
 // Hours: Monday – Saturday, 7:00 AM – 7:00 PM
@@ -19,7 +19,7 @@ export const mgrConstructionConfig = {
     description:
       "Welcome to MGR Construction LLC, your trusted partner in exceptional construction services in Oregon. With a rich history spanning over two decades, we have mastered the art of transforming spaces into functional and aesthetically pleasing structures. Our dedication to quality craftsmanship and customer satisfaction has been the driving force behind our success.",
     email: "mcr.construction75@gmail.com",
-    phone: "971-600-6445",
+    phone: "971-316-9918",
     phone2: "971-316-9918",
     address: "Oregon",
     serviceArea: "120+ miles around Oregon",
@@ -175,7 +175,7 @@ export const mgrConstructionConfig = {
   },
 
   announcementBar: {
-    cta: "Serving 120+ miles around Oregon — Mon–Sat, 7 AM to 7 PM. Call 971-600-6445 →",
+    cta: "Serving 120+ miles around Oregon — Mon–Sat, 7 AM to 7 PM. Call 971-316-9918 →",
   },
 
   quoteModal: {
@@ -244,7 +244,7 @@ export const mgrConstructionConfig = {
         title: "Contact",
         links: [
           { label: "mcr.construction75@gmail.com", href: "mailto:mcr.construction75@gmail.com" },
-          { label: "971-600-6445",                 href: "tel:+19716006445" },
+          { label: "971-316-9918",                 href: "tel:+1971-316-9918" },
           { label: "971-316-9918",                 href: "tel:+19713169918" },
           { label: "Oregon",                 href: "#contact" },
         ],

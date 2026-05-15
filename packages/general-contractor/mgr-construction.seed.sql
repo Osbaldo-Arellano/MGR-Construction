@@ -49,7 +49,7 @@ insert into brands (
   'MGR Construction LLC',
   'Transforming Properties With Stunning Solutions',
   'mcr.construction75@gmail.com',
-  '971-600-6445',
+  '971-316-9918',
 
   -- Replace with Supabase Storage public URL after uploading logo
   '/mgr/logo-light.svg',

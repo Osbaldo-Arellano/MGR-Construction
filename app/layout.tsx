@@ -28,7 +28,7 @@ let SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
 
 function buildJsonLd(brand: BrandRow | null, siteUrl: string) {
   const name = brand?.name ?? "MGR Construction LLC";
-  const phone = brand?.phone ?? "971-600-6445";
+  const phone = brand?.phone ?? "971-316-9918";
   const email = brand?.email ?? "mcr.construction75@gmail.com";
   const address = brand?.address;
   const socialLinks = (brand?.social_links ?? []).map((s) => s.url).filter(Boolean);
